@@ -1,0 +1,56 @@
+version: '3.7'
+
+services:
+
+    api:
+        image: nginx:latest
+        ports:
+            - 8081:81
+        volumes:
+            - ./api:/app
+            - ./api/docker/common/nginx/conf.d:/etc/nginx/conf.d
+        depends_on:
+            - php-fpm
+
+    php-fpm:
+        build:
+            context: api/docker
+            dockerfile: development/php-fpm/Dockerfile
+        ports:
+            - 9000
+        volumes:
+            - ./api:/app
+        environment:
+            - DB_HOST=mysql
+            - DB_USER=root
+            - DB_PASSWORD=root
+            - DB_NAME=app
+
+    mysql:
+        image: mysql:5.7
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=root
+            - MYSQL_DATABASE=app
+        ports:
+            - 3306:3306
+        volumes:
+            - ./storage/docker/mysql:/var/lib/mysql
+
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        environment:
+            - PMA_ARBITRARY=1
+        restart: always
+        ports:
+            - 8080:80
+        depends_on:
+          - mysql
+
+    php-cli:
+        build:
+            context: ./api/docker
+            dockerfile: development/php-cli/Dockerfile
+        volumes:
+            - ./api:/app

@@ -1,0 +1,959 @@
+2020/02/28 18:33:23 [error] 6#6: *16 FastCGI sent in stderr: "PHP message: 404 Not Found
+Type: Slim\Exception\HttpNotFoundException
+Code: 404
+Message: Not found.
+File: /app/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php
+Line: 93
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#6 /app/public/index.php(26): Slim\App->run()
+#7 {main}" while reading response header from upstream, client: 192.168.192.1, server: , request: "GET /favicon.ico HTTP/1.1", upstream: "fastcgi://192.168.192.3:9000", host: "localhost:8081", referrer: "http://localhost:8081/"
+2020/02/29 20:09:01 [error] 6#6: *87 FastCGI sent in stderr: "PHP message: 404 Not Found
+Type: Slim\Exception\HttpNotFoundException
+Code: 404
+Message: Not found.
+File: /app/vendor/slim/slim/Slim/Middleware/RoutingMiddleware.php
+Line: 93
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(72): Slim\Middleware\RoutingMiddleware->performRouting(Object(Slim\Psr7\Request))
+#1 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#6 /app/public/index.php(29): Slim\App->run()
+#7 {main}" while reading response header from upstream, client: 192.168.192.1, server: , request: "GET /robots.txt HTTP/1.1", upstream: "fastcgi://192.168.192.3:9000", host: "localhost:8081"
+2020/03/04 14:06:53 [error] 6#6: *1 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:09:32 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of http\Client\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 11
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fa
+2020/03/04 14:09:34 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of http\Client\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 11
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fa
+2020/03/04 14:10:10 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of Slim\Psr7\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 12
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fast
+2020/03/04 14:10:11 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of Slim\Psr7\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 12
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fast
+2020/03/04 14:10:12 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of Slim\Psr7\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 12
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fast
+2020/03/04 14:10:40 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of Slim\Psr7\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 12
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fast
+2020/03/04 14:10:40 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of Slim\Psr7\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 12
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fast
+2020/03/04 14:10:41 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of Slim\Psr7\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 12
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fast
+2020/03/04 14:10:46 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:10:58 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of Slim\Psr7\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 12
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fast
+2020/03/04 14:10:59 [error] 6#6: *5 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of Slim\Psr7\Response, instance of Slim\Psr7\Request given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 12
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fast
+2020/03/04 14:19:09 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:19:10 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:19:24 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:19:36 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:19:36 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:19:56 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:19:58 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:19:59 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:20:08 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:20:08 [error] 6#6: *19 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:21:29 [error] 6#6: *32 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:21:30 [error] 6#6: *32 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, null returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:22:01 [error] 6#6: *32 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, string returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:22:03 [error] 6#6: *32 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, string returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:32:00 [error] 6#6: *39 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:32:02 [error] 6#6: *39 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:21 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:22 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:23 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:24 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:25 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:26 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:26 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:27 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:33:27 [error] 6#6: *45 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Return value of Slim\Handlers\Strategies\RequestResponse::__invoke() must implement interface Psr\Http\Message\ResponseInterface, int returned
+File: /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php
+Line: 43
+Trace: #0 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#10 /app/public/index.php(32): Slim\App->run()
+#11 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/04 14:35:20 [error] 6#6: *57 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 2 passed to App\Command\Auth\JoinByEmail\Request\Command::test() must be an instance of App\Command\Auth\JoinByEmail\Request\Response, instance of Slim\Psr7\Response given, called in /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php on line 43
+File: /app/src/Command/Auth/JoinByEmail/Request/Command.php
+Line: 10
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Command\Auth\JoinByEmail\Request\Command->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /te
+2020/03/05 12:27:30 [error] 6#6: *360 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: Error
+Code: 0
+Message: Object of class DateTimeImmutable could not be converted to string
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 20
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/05 12:27:54 [error] 6#6: *360 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: Error
+Code: 0
+Message: Object of class DateTimeImmutable could not be converted to string
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 20
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/05 12:27:55 [error] 6#6: *360 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: Error
+Code: 0
+Message: Object of class DateTimeImmutable could not be converted to string
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 20
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/05 19:30:40 [error] 6#6: *390 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Auth\Services\Tokenizer::__construct() must be an instance of DateInterval, bool given, called in /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php on line 25
+File: /app/src/Auth/Services/Tokenizer.php
+Line: 18
+Trace: #0 /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php(25): App\Auth\Services\Tokenizer->__construct(false)
+#1 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#11 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#12 /app/public/index.php(32): Slim\App->run()
+#13 {main}" while reading upstream, client: 192.168.208.1, server: , requ
+2020/03/05 19:32:45 [error] 6#6: *395 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: Argument 1 passed to App\Auth\Services\Tokenizer::__construct() must be an instance of DateInterval, bool given, called in /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php on line 25
+File: /app/src/Auth/Services/Tokenizer.php
+Line: 18
+Trace: #0 /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php(25): App\Auth\Services\Tokenizer->__construct(false)
+#1 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#11 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#12 /app/public/index.php(32): Slim\App->run()
+#13 {main}" while reading upstream, client: 192.168.208.1, server: , requ
+2020/03/05 19:35:53 [error] 6#6: *397 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: Exception
+Code: 0
+Message: DateInterval::__construct(): Unknown or bad format (i30)
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 25
+Trace: #0 /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php(25): DateInterval->__construct('i30')
+#1 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#11 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#12 /app/public/index.php(32): Slim\App->run()
+#13 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/05 19:36:07 [error] 6#6: *397 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: Exception
+Code: 0
+Message: DateInterval::__construct(): Unknown or bad format (I30)
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 25
+Trace: #0 /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php(25): DateInterval->__construct('I30')
+#1 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#11 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#12 /app/public/index.php(32): Slim\App->run()
+#13 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/05 19:36:08 [error] 6#6: *397 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: Exception
+Code: 0
+Message: DateInterval::__construct(): Unknown or bad format (I30)
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 25
+Trace: #0 /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php(25): DateInterval->__construct('I30')
+#1 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#11 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#12 /app/public/index.php(32): Slim\App->run()
+#13 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/06 07:07:19 [error] 6#6: *834 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: TypeError
+Code: 0
+Message: DateTimeImmutable::add() expects parameter 1 to be DateInterval, object given
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 27
+Trace: #0 /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php(27): DateTimeImmutable->add(Object(App\Auth\Services\Tokenizer))
+#1 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#11 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#12 /app/public/index.php(32): Slim\App->run()
+#13 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "local
+2020/03/06 07:08:20 [error] 6#6: *834 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: Error
+Code: 0
+Message: Object of class DateTimeImmutable could not be converted to string
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 27
+Trace: #0 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#1 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#9 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#11 /app/public/index.php(32): Slim\App->run()
+#12 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/06 07:21:12 [error] 6#6: *850 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: ArgumentCountError
+Code: 0
+Message: time() expects exactly 0 parameters, 1 given
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 29
+Trace: #0 /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php(29): time(1662448872)
+#1 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#11 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#12 /app/public/index.php(32): Slim\App->run()
+#13 {main}" while reading upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
+2020/03/06 07:29:59 [error] 6#6: *853 FastCGI sent in stderr: "PHP message: Slim Application Error
+Type: Exception
+Code: 0
+Message: DateInterval::__construct(): Unknown or bad format (T30M)
+File: /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php
+Line: 25
+Trace: #0 /app/src/Auth/Command/JoinByEmail/Request/RequestCommand.php(25): DateInterval->__construct('T30M')
+#1 /app/vendor/slim/slim/Slim/Handlers/Strategies/RequestResponse.php(43): App\Auth\Command\JoinByEmail\Request\RequestCommand->test(Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#2 /app/vendor/slim/slim/Slim/Routing/Route.php(381): Slim\Handlers\Strategies\RequestResponse->__invoke(Array, Object(Slim\Psr7\Request), Object(Slim\Psr7\Response), Array)
+#3 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\Routing\Route->handle(Object(Slim\Psr7\Request))
+#4 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#5 /app/vendor/slim/slim/Slim/Routing/Route.php(341): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#6 /app/vendor/slim/slim/Slim/Routing/RouteRunner.php(84): Slim\Routing\Route->run(Object(Slim\Psr7\Request))
+#7 /app/vendor/slim/slim/Slim/Middleware/ErrorMiddleware.php(98): Slim\Routing\RouteRunner->handle(Object(Slim\Psr7\Request))
+#8 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(140): Slim\Middleware\ErrorMiddleware->process(Object(Slim\Psr7\Request), Object(Slim\Routing\RouteRunner))
+#9 /app/vendor/slim/slim/Slim/MiddlewareDispatcher.php(81): class@anonymous->handle(Object(Slim\Psr7\Request))
+#10 /app/vendor/slim/slim/Slim/App.php(211): Slim\MiddlewareDispatcher->handle(Object(Slim\Psr7\Request))
+#11 /app/vendor/slim/slim/Slim/App.php(195): Slim\App->handle(Object(Slim\Psr7\Request))
+#12 /app/public/index.php(32): Slim\App->run()
+#13 {main}" while reading response header from upstream, client: 192.168.208.1, server: , request: "GET /test HTTP/1.1", upstream: "fastcgi://192.168.208.4:9000", host: "localhost:8081"
