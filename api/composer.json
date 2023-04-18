@@ -10,7 +10,7 @@
     ],
     "require": {
         "slim/slim": "^4.0",
-        "slim/psr7": "^0.6.0",
+        "slim/psr7": "^1.6.1",
         "webmozart/assert": "^1.7",
         "ramsey/uuid": "^3.9"
     },
